@@ -11,4 +11,6 @@ public class NPCHandler : MonoBehaviour
     {
         parser = gameObject.GetComponent<DialogueParser>();
     }
+
+    // Implement handling of the dialogue
 }
