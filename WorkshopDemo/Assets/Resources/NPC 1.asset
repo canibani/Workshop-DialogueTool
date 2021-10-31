@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6727c9ba1c50774ab6f4ea163ef5eda, type: 3}
+  m_Name: NPC 1
+  m_EditorClassIdentifier: 
+  DialogueNodeData:
+  - NodeGUID: 315d4bef-8534-458e-82e8-dbf8ca16eb50
+    DialogueText: Right Door
+    Position: {x: 1175, y: 353}
+  - NodeGUID: a2de3242-5b04-42a0-bd34-1b396df3f460
+    DialogueText: Left Door
+    Position: {x: 1175, y: 243}
+  - NodeGUID: 26f342ad-7537-4503-8e1e-9f6daf98c73e
+    DialogueText: Hello, {PlayerName}
+    Position: {x: 270, y: 305}
+  - NodeGUID: 10344947-d37d-40db-be93-ba19980af4b3
+    DialogueText: You have two choices. Which door do you want to open?
+    Position: {x: 594, y: 305}
+  NodeLinks:
+  - BaseNodeGuid: bc1f32aa-27f4-496d-9a78-9a6211dc513e
+    PortName: Next
+    ConditionBoolean: 
+    TargetNodeGuid: 26f342ad-7537-4503-8e1e-9f6daf98c73e
+  - BaseNodeGuid: 26f342ad-7537-4503-8e1e-9f6daf98c73e
+    PortName: Continue
+    ConditionBoolean: No condition
+    TargetNodeGuid: 10344947-d37d-40db-be93-ba19980af4b3
+  - BaseNodeGuid: 10344947-d37d-40db-be93-ba19980af4b3
+    PortName: Left Door
+    ConditionBoolean: HasKey
+    TargetNodeGuid: a2de3242-5b04-42a0-bd34-1b396df3f460
+  - BaseNodeGuid: 10344947-d37d-40db-be93-ba19980af4b3
+    PortName: Right Door
+    ConditionBoolean: HasKey
+    TargetNodeGuid: 315d4bef-8534-458e-82e8-dbf8ca16eb50
+  ExposedStringProperties:
+  - PropertyName: PlayerName
+    PropertyValue: Tanguy
+    PropertyType: String
+  ExposedBooleanProperties:
+  - PropertyName: HasKey
+    PropertyValue: 0
+    PropertyType: Boolean
+  ExposedIntegerProperties: []
+  ExposedFloatProperties: []
